@@ -44,6 +44,7 @@
             this.tmrBlinkVerde = new System.Windows.Forms.Timer(this.components);
             this.tmrAmarillo = new System.Windows.Forms.Timer(this.components);
             this.tmrRojo = new System.Windows.Forms.Timer(this.components);
+            this.tmrBlinkAmarillo = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.SemOeste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SemSur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SemEste)).BeginInit();
@@ -76,6 +77,7 @@
             this.btnPrev.TabIndex = 1;
             this.btnPrev.Text = "Preventivas";
             this.btnPrev.UseVisualStyleBackColor = false;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // btnApagar
             // 
@@ -89,6 +91,7 @@
             this.btnApagar.TabIndex = 2;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = false;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // btnSalir
             // 
@@ -106,12 +109,12 @@
             // 
             // lblCont
             // 
-            this.lblCont.BackColor = System.Drawing.Color.Black;
-            this.lblCont.Font = new System.Drawing.Font("Segoe UI Emoji", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCont.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCont.BackColor = System.Drawing.Color.Transparent;
+            this.lblCont.Font = new System.Drawing.Font("Open 24 Display St", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCont.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lblCont.Location = new System.Drawing.Point(376, 260);
             this.lblCont.Name = "lblCont";
-            this.lblCont.Size = new System.Drawing.Size(167, 53);
+            this.lblCont.Size = new System.Drawing.Size(52, 53);
             this.lblCont.TabIndex = 4;
             this.lblCont.Text = "0";
             this.lblCont.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -187,6 +190,11 @@
             this.tmrRojo.Interval = 500;
             this.tmrRojo.Tick += new System.EventHandler(this.tmrRojo_Tick);
             // 
+            // tmrBlinkAmarillo
+            // 
+            this.tmrBlinkAmarillo.Interval = 500;
+            this.tmrBlinkAmarillo.Tick += new System.EventHandler(this.tmrBlinkAmarillo_Tick);
+            // 
             // miForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -232,5 +240,6 @@
         private System.Windows.Forms.Timer tmrBlinkVerde;
         private System.Windows.Forms.Timer tmrAmarillo;
         private System.Windows.Forms.Timer tmrRojo;
+        private System.Windows.Forms.Timer tmrBlinkAmarillo;
     }
 }

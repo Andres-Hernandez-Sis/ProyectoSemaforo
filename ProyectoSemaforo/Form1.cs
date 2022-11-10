@@ -1,9 +1,3 @@
-using ProyectoSemaforo.Properties;
-using System.Drawing;
-using System.Resources;
-
-
-
 namespace ProyectoSemaforo
 {
     public partial class miForma : Form
@@ -29,6 +23,7 @@ namespace ProyectoSemaforo
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
+            DetenerTimerYSegundos();
             lblCont.ForeColor = Color.GreenYellow;
             Estado = 1;
             CambioDeSemaforo(Properties.Resources.Sema_Green);
@@ -45,20 +40,20 @@ namespace ProyectoSemaforo
 
                 SemEste.Image = Properties.Resources.Sema_Red;
                 SemOeste.Image = Properties.Resources.Sema_Red;
-                SemEste.Image.RotateFlip(RotateFlipType.Rotate270FlipY);
-                SemOeste.Image.RotateFlip(RotateFlipType.Rotate90FlipY);
+                SemOeste.Image.RotateFlip(RotateFlipType.Rotate270FlipY);
+                SemEste.Image.RotateFlip(RotateFlipType.Rotate90FlipY);
             }
             else
             {
                 SemEste.Image = (Image)img.Clone();
                 SemOeste.Image = (Image)img.Clone();
-                SemEste.Image.RotateFlip(RotateFlipType.Rotate270FlipY);
-                SemOeste.Image.RotateFlip(RotateFlipType.Rotate90FlipY);
+                SemOeste.Image.RotateFlip(RotateFlipType.Rotate270FlipY);
+                SemEste.Image.RotateFlip(RotateFlipType.Rotate90FlipY);
             }
         }
 
         private void tmrVerde_Tick(object sender, EventArgs e)
-        {   
+        {
             if (SegundosEnVerde <=4)
             {  
                 int Aux = (int)SegundosEnVerde;
@@ -70,7 +65,7 @@ namespace ProyectoSemaforo
                 tmrVerde.Stop();
                 SegundosEnVerde = 0;
                 CambioDeSemaforo(Properties.Resources.Sema_Off);
-                lblCont.ForeColor = Color.Black;
+                lblCont.ForeColor = Color.Gray;
                 Estado = 2;
                 tmrCambio.Start();
             }
@@ -79,18 +74,17 @@ namespace ProyectoSemaforo
         private void tmrCambio_Tick(object sender, EventArgs e)
         {
             tmrCambio.Stop();
-            //Variable de tipo Image, la igualamos a semaforo apagado
             Image SiguienteImagen = Properties.Resources.Sema_Off;
             if (Estado == 1)
             {
-                SegundosEnVerde = 0.5;
+                SegundosEnVerde = 0;
                 tmrVerde.Start();
                 SiguienteImagen = Properties.Resources.Sema_Green;
                 lblCont.ForeColor = Color.GreenYellow;
             }
             if (Estado == 2)
             {
-                UltimosSegundosVerde = 1;
+                UltimosSegundosVerde = 1.5;
                 tmrBlinkVerde.Start();
                 SiguienteImagen = Properties.Resources.Sema_Green;
                 lblCont.ForeColor = Color.GreenYellow;
@@ -115,14 +109,13 @@ namespace ProyectoSemaforo
 
         private void tmrBlinkVerde_Tick(object sender, EventArgs e)
         {
-            if (UltimosSegundosVerde < 4)
+            if (UltimosSegundosVerde <= 3)
             {
-
                 int Aux = (int)UltimosSegundosVerde;
                 if (UltimosSegundosVerde == 1.5 || UltimosSegundosVerde == 2.5 || UltimosSegundosVerde == 3.5)
                 {
                     CambioDeSemaforo(Properties.Resources.Sema_Off);
-                    lblCont.ForeColor = Color.Black;    
+                    lblCont.ForeColor = Color.Gray;    
                 }
                 else
                 {
@@ -135,8 +128,8 @@ namespace ProyectoSemaforo
             else
             {
                 tmrBlinkVerde.Stop();
-                UltimosSegundosVerde = 0;
-                lblCont.ForeColor = Color.Black;
+                UltimosSegundosVerde = 0; 
+                lblCont.ForeColor = Color.Gray;
                 Estado = 3;
                 tmrCambio.Start();
             }
@@ -155,11 +148,52 @@ namespace ProyectoSemaforo
                 tmrRojo.Stop();
                 SegundosEnRojo = 0;
                 CambioDeSemaforo(Properties.Resources.Sema_Red);
-                lblCont.ForeColor = Color.Black;
+                lblCont.ForeColor = Color.Gray;
                 Estado = 1;
                 SemaforosNorteYSur = !SemaforosNorteYSur;
                 tmrCambio.Start();
             }
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            DetenerTimerYSegundos();
+            ParpadeoAmarillo(Properties.Resources.Sema_Yellow);
+            lblCont.ForeColor = Color.Gold;
+            lblCont.Text = "0";
+            tmrBlinkAmarillo.Start();
+        }
+
+        private void tmrBlinkAmarillo_Tick(object sender, EventArgs e)
+        {
+            if (lblCont.ForeColor == Color.Gray)
+            {
+                lblCont.ForeColor = Color.Gold;
+                ParpadeoAmarillo(Properties.Resources.Sema_Yellow);
+            }
+            else
+            {
+                lblCont.ForeColor = Color.Gray;
+                ParpadeoAmarillo(Properties.Resources.Sema_Off);
+            }
+        }
+
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            DetenerTimerYSegundos();
+            lblCont.Text = "0";
+            lblCont.ForeColor = Color.Gray;
+            Apagar(Properties.Resources.Sema_Off);
+        }
+
+        public void DetenerTimerYSegundos()
+        {
+            tmrAmarillo.Stop();
+            tmrVerde.Stop();
+            tmrRojo.Stop();
+            tmrBlinkVerde.Stop();
+            tmrBlinkAmarillo.Stop();
+            SegundosEnVerde = 0; UltimosSegundosVerde = 0; SegundosEnAmarillo = 0; SegundosEnRojo = 0;
         }
 
         private void tmrAmarillo_Tick(object sender, EventArgs e)
@@ -174,10 +208,32 @@ namespace ProyectoSemaforo
             {
                 tmrAmarillo.Stop();
                 SegundosEnAmarillo = 0;
-                lblCont.ForeColor = Color.Black;
+                lblCont.ForeColor = Color.Gray;
                 Estado = 4;
                 tmrCambio.Start();
             }
+        }
+
+        private void ParpadeoAmarillo(Image img)
+        {
+            SemNorte.Image = (Image)img.Clone();
+            SemSur.Image = (Image)img.Clone();
+            SemEste.Image = (Image)img.Clone();
+            SemOeste.Image = (Image)img.Clone();
+            SemEste.Image.RotateFlip(RotateFlipType.Rotate90FlipY);
+            SemSur.Image.RotateFlip(RotateFlipType.Rotate180FlipX);
+            SemOeste.Image.RotateFlip(RotateFlipType.Rotate270FlipY);
+        }
+
+        private void Apagar(Image img)
+        {
+            SemNorte.Image = (Image)img.Clone();
+            SemSur.Image = (Image)img.Clone();
+            SemEste.Image = (Image)img.Clone();
+            SemOeste.Image = (Image)img.Clone();
+            SemEste.Image.RotateFlip(RotateFlipType.Rotate90FlipY);
+            SemSur.Image.RotateFlip(RotateFlipType.Rotate180FlipX);
+            SemOeste.Image.RotateFlip(RotateFlipType.Rotate270FlipY);
         }
 
         private void SemNorte_Click(object sender, EventArgs e)
