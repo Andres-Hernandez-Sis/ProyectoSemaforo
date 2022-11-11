@@ -1,3 +1,5 @@
+using System.Media;
+
 namespace ProyectoSemaforo
 {
     public partial class miForma : Form
@@ -18,7 +20,7 @@ namespace ProyectoSemaforo
 
         private void miForma_Load(object sender, EventArgs e)
         {
-
+            playSimpleSound();
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -54,7 +56,7 @@ namespace ProyectoSemaforo
 
         private void tmrVerde_Tick(object sender, EventArgs e)
         {
-            if (SegundosEnVerde <=4)
+            if (SegundosEnVerde < 15)
             {  
                 int Aux = (int)SegundosEnVerde;
                 lblCont.Text = (Aux+1).ToString();
@@ -77,7 +79,7 @@ namespace ProyectoSemaforo
             Image SiguienteImagen = Properties.Resources.Sema_Off;
             if (Estado == 1)
             {
-                SegundosEnVerde = 0;
+                SegundosEnVerde = 0.5;
                 tmrVerde.Start();
                 SiguienteImagen = Properties.Resources.Sema_Green;
                 lblCont.ForeColor = Color.GreenYellow;
@@ -109,10 +111,10 @@ namespace ProyectoSemaforo
 
         private void tmrBlinkVerde_Tick(object sender, EventArgs e)
         {
-            if (UltimosSegundosVerde <= 3)
+            if (UltimosSegundosVerde < 3.5)
             {
                 int Aux = (int)UltimosSegundosVerde;
-                if (UltimosSegundosVerde == 1.5 || UltimosSegundosVerde == 2.5 || UltimosSegundosVerde == 3.5)
+                if (UltimosSegundosVerde == 1.5 || UltimosSegundosVerde == 2.5)
                 {
                     CambioDeSemaforo(Properties.Resources.Sema_Off);
                     lblCont.ForeColor = Color.Gray;    
@@ -128,7 +130,8 @@ namespace ProyectoSemaforo
             else
             {
                 tmrBlinkVerde.Stop();
-                UltimosSegundosVerde = 0; 
+                UltimosSegundosVerde = 0;
+                CambioDeSemaforo(Properties.Resources.Sema_Off);
                 lblCont.ForeColor = Color.Gray;
                 Estado = 3;
                 tmrCambio.Start();
@@ -208,6 +211,7 @@ namespace ProyectoSemaforo
             {
                 tmrAmarillo.Stop();
                 SegundosEnAmarillo = 0;
+                CambioDeSemaforo(Properties.Resources.Sema_Off);
                 lblCont.ForeColor = Color.Gray;
                 Estado = 4;
                 tmrCambio.Start();
@@ -234,6 +238,12 @@ namespace ProyectoSemaforo
             SemEste.Image.RotateFlip(RotateFlipType.Rotate90FlipY);
             SemSur.Image.RotateFlip(RotateFlipType.Rotate180FlipX);
             SemOeste.Image.RotateFlip(RotateFlipType.Rotate270FlipY);
+        }
+
+        private void playSimpleSound()
+        {
+            SoundPlayer simpleSound = new SoundPlayer(@"./music/PokemonSGC-NewBarkTown.wav");
+            simpleSound.Play();
         }
 
         private void SemNorte_Click(object sender, EventArgs e)
