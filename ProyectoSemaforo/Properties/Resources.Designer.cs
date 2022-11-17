@@ -63,29 +63,9 @@ namespace ProyectoSemaforo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Sema_Green {
-            get {
-                object obj = ResourceManager.GetObject("Sema-Green", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Sema_Green2_0 {
             get {
                 object obj = ResourceManager.GetObject("Sema_Green2_0", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Sema_Off {
-            get {
-                object obj = ResourceManager.GetObject("Sema-Off", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,26 +113,6 @@ namespace ProyectoSemaforo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Sema_OffLat {
-            get {
-                object obj = ResourceManager.GetObject("Sema-OffLat", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Sema_Red {
-            get {
-                object obj = ResourceManager.GetObject("Sema-Red", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Sema_Red2_0 {
             get {
                 object obj = ResourceManager.GetObject("Sema_Red2_0", resourceCulture);
@@ -163,29 +123,9 @@ namespace ProyectoSemaforo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Sema_Yellow {
-            get {
-                object obj = ResourceManager.GetObject("Sema-Yellow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Sema_Yellow2_0 {
             get {
                 object obj = ResourceManager.GetObject("Sema_Yellow2_0", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Semaforo {
-            get {
-                object obj = ResourceManager.GetObject("Semaforo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

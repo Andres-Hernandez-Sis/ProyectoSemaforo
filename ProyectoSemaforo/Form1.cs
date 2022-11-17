@@ -64,13 +64,13 @@ namespace ProyectoSemaforo
                 SiguienteImagen = Properties.Resources.Sema_Red2_0;
                 lblCont.ForeColor = Color.Red;
             }
-            lblCont.Text = "1"; // Es los medios segundos entre cambios
+            lblCont.Text = "1";
             CambioDeSemaforo(SiguienteImagen);
         }
 
         private void tmrVerde_Tick(object sender, EventArgs e)
-        {//Aqui en la segunda vuelta esta entrando un 1, ese 1 se iguala a la aux, y se muestra como 2, por eso no dura nada,el 1 mostrado es el del final del rojo.
-            if (SegundosEnVerde <= 14) //if (SegundosEnVerde <= 14)
+        {
+            if (SegundosEnVerde <= 14) 
             {
                 int Aux = (int)SegundosEnVerde; 
                 lblCont.Text = (Aux + 1).ToString(); 
@@ -217,9 +217,9 @@ namespace ProyectoSemaforo
 
         private void btnApagar_Click(object sender, EventArgs e)
         {
-            DetenerTimerYSegundos();
-            lblCont.Text = "0";
+            DetenerTimerYSegundos();   
             lblCont.ForeColor = Color.Gray;
+            lblCont.Text = "0";
             Apagar(Properties.Resources.Sema_Off2_0);
         }
 
@@ -258,6 +258,7 @@ namespace ProyectoSemaforo
         {
             this.Close();
         }
+
         private void SemNorte_Click(object sender, EventArgs e)
         {
 

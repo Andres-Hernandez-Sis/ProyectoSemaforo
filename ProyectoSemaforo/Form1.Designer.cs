@@ -211,6 +211,7 @@
             this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.btnPrev);
             this.Controls.Add(this.btnInicio);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "miForma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

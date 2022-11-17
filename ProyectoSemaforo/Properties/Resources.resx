@@ -118,43 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Sema-Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sema-Red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Sema-Off2.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sema-Off2.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sema-Off2.0 LatI" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sema-Off2.0 LatI.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Sema-Off2.0 A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sema-Off2.0 A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sema-Off2.0 LatD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sema-Off2.0 LatD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sema-Off2.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sema-Off2.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sema-Off" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sema-Off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sema-Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sema-Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Semaforo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Semaforo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Sema-Off2.0 LatI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sema-Off2.0 LatI.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sema_Green2_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sema_Green2_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sema-OffLat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sema-OffLat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sema_Yellow2_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sema_Yellow2_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sema-Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sema-Yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Sema_Red2_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sema_Red2_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sema-Off2.0 A" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sema-Off2.0 A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Sema_Yellow2_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sema_Yellow2_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
